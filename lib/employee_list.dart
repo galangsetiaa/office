@@ -55,7 +55,20 @@ FutureOr reloadDataEmployee(dynamic value){
       appBar: AppBar(
         title: const Text("Employee List"),
         backgroundColor: Colors.indigo,
-        actions: <Widget>[
+        actions: [
+          IconButton(
+            onPressed: () {
+              // method to show the search bar
+              showSearch(
+                context: context,
+                // delegate to customize the search bar
+                delegate: EmployeeSearch(employee),
+              );
+            },
+            icon: const Icon(Icons.search),
+          )
+        ],
+        <Widget>[
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
             child: GestureDetector(
@@ -66,10 +79,12 @@ FutureOr reloadDataEmployee(dynamic value){
               },
               child: const Icon(
                 Icons.add,
-                size:26.0,
+                size:26.0,  
               ),
-            )),
+            )
+          ),
         ],
+        
       ),
       body: ListView.builder(
         // Let the ListView knom\w how many items it needs to build.

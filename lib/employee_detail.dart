@@ -27,8 +27,8 @@ class _EmployeeDetailState extends State<EmployeeDetail> {
 
   selectIdEmployee(String id) async {
     List data = [];
-    data = jsonDecode(await ds.selectId('63476b8299b6c11c094bd516', 'office',
-    'employee','63476e1299b6c11c094bd6e5', id));
+    data = jsonDecode(await ds.selectId('63476cf099b6c11c094bd5f1', 'office',
+    'employee','63476b5699b6c11c094bd511', id));
     employee = data.map((e) => EmployeeModel.fromJson(e)).toList();
   }
 
